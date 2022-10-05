@@ -16,4 +16,4 @@ if index == -1:
 else:
     print("Item found at index: ", index)
 
-print(list)
+linear_search(list, 10)
