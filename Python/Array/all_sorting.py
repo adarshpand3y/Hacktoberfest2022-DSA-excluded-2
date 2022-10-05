@@ -183,7 +183,16 @@ def heapSort(arr):
 
 
 
+# ----------bubbleSort
+arr = [64, 34, 25, 12, 22, 11, 90]
 
+bubbleSort(arr)
+
+print("Sorted array is:")
+for i in range(len(arr)):
+    print("% d" % arr[i], end=" ")
+    
+    
 #---------Heap sort
 
 arr = [12, 11, 13, 5, 6, 7, ]
@@ -235,11 +244,4 @@ selectionSort(arr, size)
 print('The array after sorting in Ascending Order by selection sort is:')
 print(arr)
 
-# ----------bubbleSort
-arr = [64, 34, 25, 12, 22, 11, 90]
 
-bubbleSort(arr)
-
-print("Sorted array is:")
-for i in range(len(arr)):
-    print("% d" % arr[i], end=" ")
