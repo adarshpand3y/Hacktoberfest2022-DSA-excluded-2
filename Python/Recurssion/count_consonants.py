@@ -1,5 +1,5 @@
 
-#  function of count consonents in a string
+#  function of count consonants in a string
 def count_consonent(input_str):
     if input_str == "":
         return 0
