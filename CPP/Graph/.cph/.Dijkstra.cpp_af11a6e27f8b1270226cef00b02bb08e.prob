@@ -1,0 +1,1 @@
+{"name":"Local: Dijkstra","url":"/home/prateek/Hactoberfest_2022/Hacktoberfest2022-DSA/CPP/Graph/Dijkstra.cpp","tests":[{"id":1665037460913,"input":"3 3\n1 2 3\n1 3 1\n3 2 1\n1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/prateek/Hactoberfest_2022/Hacktoberfest2022-DSA/CPP/Graph/Dijkstra.cpp","group":"local","local":true}
