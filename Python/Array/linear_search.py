@@ -14,6 +14,6 @@ N = len(nums)
 # Function call
 ans = linearsearch(nums, N, target)
 if(ans == -1):
-    print("Element is not present in array")
+    print("Element Is Not Present In Array")
 else:
-    print("Element is present at index", ans)
+    print("Element Is Present at Index", ans)
