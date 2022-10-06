@@ -24,5 +24,5 @@ b.enque(3)
 b.enque(4)
 b.enque(5)
 print(b.data)
-b.deque()# # remove the first element that we have put in the queue
+b.deque()# # #remove the first element that we have put in the queue
 print(b.data)
