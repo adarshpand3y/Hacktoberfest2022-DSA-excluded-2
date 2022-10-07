@@ -69,7 +69,6 @@ void checkBST(Node* root)
         cout<<"This tree is not a BST."<<endl;
     }
 }
- 
 int main()
 {
     int arr[] = { 15, 10, 20, 8, 12, 16, 25 };
