@@ -8,12 +8,17 @@ void printArray(int ans[], int n) {
    }
 }
 //Function to reverse array using an auxiliary array
+//No need for extra array
 void reverseArray(int arr[], int n) {
-   int ans[n];
-   for (int i = n - 1; i >= 0; i--) {
-      ans[n - i - 1] = arr[i];
+   int l=0, r=n-1;  //two variable storing the address of first and last element in array
+   while(l<=r){
+      int temp=arr[l];
+      arr[l]=arr[r];
+      arr[r]=temp;
+      l++;
+      r--;
    }
-   printArray(ans, n);
+   printArray(arr, n);
 }
 int main() {
    int n = 5;
