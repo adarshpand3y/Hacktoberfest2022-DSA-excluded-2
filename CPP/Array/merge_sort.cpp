@@ -54,15 +54,15 @@ void merge(int array[], int const left, int const mid,
 	delete[] rightArray;
 }
 
-void mergeSort(int array[], int const begin, int const end)
+void mergeSort(int array[], int const start, int const end)
 {
-	if (begin >= end)
+	if (start>= end)
 		return; 
 
-	auto mid = begin + (end - begin) / 2;
-	mergeSort(array, begin, mid);
+	auto mid = start + (end - start) / 2;
+	mergeSort(array, start, mid);
 	mergeSort(array, mid + 1, end);
-	merge(array, begin, mid, end);
+	merge(array, start, mid, end);
 }
 
 void printArray(int A[], int size)
