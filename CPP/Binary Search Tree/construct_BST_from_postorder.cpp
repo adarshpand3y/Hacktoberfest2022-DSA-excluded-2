@@ -3,8 +3,8 @@
     Contributed by Tanuj Kalonia
 
     Problem Statement :
-    - You are given a postorder traversal arrya of a binary tree,
-    - You have to create a binary Search Tree using the postorder traversal.
+    - You are given a postorder traversal array of a binary tree,
+    - You have to create a "binary Search Tree" using the postorder traversal.
 
     Input :
     - 1st line will contain "t" test cases
