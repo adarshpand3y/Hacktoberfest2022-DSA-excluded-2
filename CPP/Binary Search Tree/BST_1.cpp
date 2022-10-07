@@ -1,50 +1,43 @@
-//author : elvenblade
-//जय हिंद, जय महाराष्ट्र !
-
-//BST-Implementaion
-
-#include<bits/stdc++.h>
+// C++ program to implement recursive Binary Search
+#include <bits/stdc++.h>
 using namespace std;
 
-struct Node{
-    int data;
-    Node* right;
-    Node* left;
-};
+// A recursive binary search function. It returns
+// location of x in given array arr[l..r] is present,
+// otherwise -1
+int binarySearch(int arr[], int l, int r, int x)
+{
+	if (r >= l) {
+		int mid = l + (r - l) / 2;
 
-Node* newNode(int x){
-    Node* temp=new Node();
-    temp->data=x;
-    temp->right=NULL;
-    temp->left=NULL;
-    return temp;
+		// If the element is present at the middle
+		// itself
+		if (arr[mid] == x)
+			return mid;
+
+		// If element is smaller than mid, then
+		// it can only be present in left subarray
+		if (arr[mid] > x)
+			return binarySearch(arr, l, mid - 1, x);
+
+		// Else the element can only be present
+		// in right subarray
+		return binarySearch(arr, mid + 1, r, x);
+	}
+
+	// We reach here when element is not
+	// present in array
+	return -1;
 }
 
-Node* Insert(Node* root, int x){
-    if(root==NULL) root=newNode(x);
-    else if(x<=root->data) root->left=Insert(root->left,x);
-    else root->right=Insert(root->right,x);
-    return root;
-}
-
-bool search(Node* root, int x){
-    if(root=NULL) return false;
-    else if(root->data==x) return true;
-    else if(x<=root->data) return search(root->left,x);
-    else return search(root->right,x);
-}
-
-int main(){
-    Node* root=NULL;
-    root = Insert(root,15);	
-	root = Insert(root,10);	
-	root = Insert(root,20);
-	root = Insert(root,25);
-	root = Insert(root,8);
-	root = Insert(root,12);
-
-    int n;
-    cin>>n;
-    if(search(root,n)==true) cout<<"Number Present";
-    else cout<<"Not Present";
+int main(void)
+{
+	int arr[] = { 2, 3, 4, 10, 40 };
+	int x = 10;
+	int n = sizeof(arr) / sizeof(arr[0]);
+	int result = binarySearch(arr, 0, n - 1, x);
+	(result == -1)
+		? cout << "Element is not present in array"
+		: cout << "Element is present at index " << result;
+	return 0;
 }
