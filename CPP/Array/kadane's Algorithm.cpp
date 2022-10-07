@@ -17,7 +17,7 @@
 
 // C++ program to print largest contiguous array sum
 
-#include <bits/stdc++.h> // this library/header file included all basic library which is use commenly
+#include <bits/stdc++.h> // this library/header file included all basic library which is use commonly
 using namespace std;
 
 int maxSubArraySum(int a[], int size)
@@ -29,8 +29,8 @@ int maxSubArraySum(int a[], int size)
 		if (max_so_far < max_ending_here)
 			max_so_far = max_ending_here;
 
-		if (max_ending_here < 0)
-			max_ending_here = 0;
+		if (max_ending_here < a[i]) //if max_ending_here is less than a[i] means it will also work for negative numbers
+			max_ending_here = a[i];
 	}
 	return max_so_far;
 }
@@ -38,7 +38,8 @@ int maxSubArraySum(int a[], int size)
 
 int main()
 {
-	int arr[] = { -2, -3, 4, -1, -2, 1, 5, -3 };
+	int arr[] = { -2,1,-3,4,-1,2,1,-5,4 };
+
     // if you wish user input to this arry to use for loop ans take input
 	int n = sizeof(arr) / sizeof(arr[0]);
 
