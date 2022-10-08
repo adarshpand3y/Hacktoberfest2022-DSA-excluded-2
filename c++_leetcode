@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+int main(){
+
+
+    int t;
+    cin>>t;
+    int N;
+    char s[N];
+    while(t--){
+        cin>>N;
+        cin>>s;
+    }
+    char letter;
+    char nextChar;
+    char lastChar;
+    while(t--){
+        for(int i=0;i<N;i++){
+            if(s[i]=='a' || s[i]=='e' || s[i]=='i' || s[i]=='o' || s[i]=='u' ){
+                if (letter == 'z')
+                 nextChar == 'a';
+          
+                     else
+                      nextChar = (char)(((int)letter) + 1);
+                
+                s[i] = nextChar;
+            }
+            
+            else{
+                
+                  if (letter == 'a')
+                lastChar == 'z';
+                 else
+                      lastChar = (char)(((int)letter) - 1);
+                s[i] = lastChar;
+            }
+        }
+        cout<<s;
+      
+    }
+    return 0;
+}
+     
