@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+string capitalizeTitle(string title) {
+     string  v;int j=0,k=0;
+  for(int i=0;i<title.size();i++){
+      if(isupper(title[i]))
+      title[i]=tolower(title[i]);
+  }
+   for(int i=0;i<title.size();i++){
+     if(title[i]==' '){
+         k=i-j;
+         if(k>=3)
+         {
+             title[j]=toupper(title[j]);
+          
+         }
+        
+          j=i+1;
+     }
+  }
+  int l=title.size();
+  l=l-j;
+   if(l>=3)
+         {
+             title[j]=toupper(title[j]);
+           
+         }   
+  return title;  }
+  int main(){
+string s;
+    getline(cin, s);
+cout<<capitalizeTitle(s);
