@@ -1,15 +1,15 @@
 # (a) To implement stack using list.
 
-list=[]
-list.append(1)
-print("push:",list)
-list.append(2)
-print("push:",list)
-list.append(3)
-print("push:",list)
-list.pop()
-print("pop:",list)
-print("peek:",list[-1])
-list.pop()
-print("pop:",list)
-print("peek:",list[-1])
+arr=[]
+arr.append(1)
+print("push:",arr)
+arr.append(2)
+print("push:",arr)
+arr.append(3)
+print("push:",arr)
+arr.pop()
+print("pop:",arr)
+print("peek:",arr[-1])
+arr.pop()
+print("pop:",arr)
+print("peek:",arr[-1])
