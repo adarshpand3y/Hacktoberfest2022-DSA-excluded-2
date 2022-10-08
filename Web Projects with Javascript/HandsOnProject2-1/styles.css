@@ -46,6 +46,8 @@ body {
    background: white;
    margin: 0 auto;
    font-family: Arial, Helvetica, sans-serif; 
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   margin-top: 20vh;
 }
 
 ol, ul {
@@ -96,11 +98,14 @@ fieldset {
   }
 input {
    font-size: 1em;
-   width: 4em;
+   width: 5em;
    clear: left;
+   border:1px solid #A67100;
+   border-radius: 5px;
   }
 input:focus {
    background: #e3d5ba;
+   border:1px solid #A67100;
   }
 label {
    display: block;
@@ -113,11 +118,29 @@ p {
    clear: left;
 }
 p#cValue {
-   width: 4em;
+   width: 5em;
    font-size: 1.1em;
    height: 1.4em;
    background: white;
    padding: 0.2em;
    overflow: hidden;
   text-overflow: ellipsis;
+  border:1px solid #A67100;
+   border-radius: 5px;
+}
+#button{
+   padding:5px;
+   background-color: aquamarine;
+   border:2px solid rgb(76, 196, 244);
+   color:rgb(41, 40, 40);
+   border-radius: 5px;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#button:active{
+   padding:5px;
+   background-color: aquamarine;
+   border:2px solid rgb(76, 196, 244);
+   color:rgb(41, 40, 40);
+   border-radius: 5px;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 0px;
 }
