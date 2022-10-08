@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void descOrder(string &s)
+{
+    sort(s.begin(), s.end(), greater<char>());
+}
+
+int main()
+{
+    string s = "payaljain";
+    descOrder(s); // function call
+    for(int i = 0; i <  s.size(); i++)
+      cout << s[i];
+    return 0;
+}
