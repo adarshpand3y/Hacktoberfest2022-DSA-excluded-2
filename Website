@@ -1,0 +1,260 @@
+@import url(https://fonts.googleapis.com/css?family=Cabin:700);
+
+
+
+body {
+  padding-top: 2em;
+  background-color: #315E8D;
+}
+
+.circle-container {
+   
+	position: relative;
+	perspective: 1000;	
+	margin: 0 auto;	
+}
+		
+.circle-container:hover .circle {
+	transform: rotate3d(45, 45, 0, 180deg);
+}
+		
+.circle-container:hover .outer-ring {
+	transform: rotate3d(45, 0, 0, 180deg);
+}
+
+.circle-container:hover .outer-outer-ring {
+	transform: rotate3d(0, 45, 0, 180deg);
+}
+		
+.circle-container, .front, .back {
+   
+	width: 175px;
+	height: 175px;
+	background-color: rgba(0,0,0,0);
+    margin-bottom: 2em;
+}
+		
+.circle, .outer-ring, .outer-outer-ring {
+   
+	transition: 0.5s;
+	transform-style: preserve-3d;
+	transition-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860);
+}
+		
+.circle {
+   
+	position: relative;
+	width: 175px;
+	height: 175px;
+    margin: 0 auto;
+}
+		
+.front, .back {
+	border-radius: 50%;
+	box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+		
+.front {
+	background-color: #fff;
+	z-index: 2;
+}
+		
+.front p {
+	margin-top: 1.2em;
+	font-family: cabin, sans-serif;
+	font-weight: 700;
+	font-size: 3em;
+	text-align: center;
+	color: #315E8D;
+}
+		
+.back {
+	transform: rotate3d(45,45,0,180deg);
+	background-color: #fff;
+}
+		
+.back-logo {
+	width: 60%;
+	display: block;
+	margin: 0.7em auto;
+}
+		
+.outer-ring {
+   
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	width: 195px;
+	height: 195px;
+	background-color: rgba(255,255,255,0);
+	box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+}
+
+.outer-outer-ring {
+   
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	width: 211px;
+	height: 211px;
+	background-color: rgba(255,255,255,0);
+	box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+}
+
+.toppart {
+   text-align: center;
+   background-color: white;
+   margin-bottom: 0.1em;
+   font-family: cabin, sans-serif;
+   color: #598DC5;
+   font-weight: 700;
+	font-size: 5em;
+}
+
+.slogan {
+   text-align: center;
+   background-color: white;
+   margin-bottom: 2em;
+   font-family: cabin, sans-serif;
+   color: #5E7082;
+   font-weight: 700;
+	font-size: 2em;
+}
+
+.sloganadj {
+   text-align: center;
+   
+   margin-bottom: 2em;
+   font-family: cabin, sans-serif;
+   color: white;
+   font-weight: 700;
+	font-size: 2em;
+   padding-top: 25px;
+   padding-right:10px;
+   padding-left:10px;
+}
+
+.health{
+   color: #5E7082;
+}
+
+.row {
+    text-align: center;
+}
+
+.whitetext {
+   color : white;
+   font-family: cabin, sans-serif;
+}
+
+.slightlybigger {
+   font-size: 1.5em;
+}
+
+.whiteback{
+   background-color: white;
+}
+
+.whenyouvisit {
+   padding-top: 25px;
+}
+
+
+
+
+
+
+
+/*flipcard start*/
+.flitskaart {
+   background-color: #315E8D;
+   height: 150px;
+   width: 150px;
+   margin: auto;
+   border-radius: 20px;
+   
+}
+
+.flitskaart1 {
+   background-color: #315E8D;
+   height: 150px;
+   width: 150px;
+   margin: auto;
+   border-radius: 20px;
+   
+}
+
+.flitskaart2 {
+   background-color: #315E8D;
+   height: 150px;
+   width: 150px;
+   margin: auto;
+   border-radius: 20px;
+   
+}
+
+.flitskaart3 {
+   background-color: #315E8D;
+   height: 150px;
+   width: 150px;
+   margin: auto;
+   border-radius: 20px;
+   
+}
+
+.ptext{
+   font-size: 1.5em;
+   margin: auto;
+   position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+   padding-left: 5px;
+   padding-right: 5px;
+}
+.ptext1{
+   font-size: 1.5em;
+   margin: auto;
+   position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+   padding-left: 5px;
+   padding-right: 5px;
+}
+.ptext2{
+   font-size: 1.5em;
+   margin: auto;
+   position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+   padding-left: 5px;
+   padding-right: 5px;
+}
+.ptext3{
+   font-size: 1.5em;
+   margin: auto;
+   position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+   padding-left: 5px;
+   padding-right: 5px;
+}
+
+.somepad{
+   padding: 30px;
+}
+
+/*flipcard end*/
+
+/*kontak vorm*/
+.cabin {
+   font-family: cabin, sans-serif;
+}
+/*kontak vorm*/
