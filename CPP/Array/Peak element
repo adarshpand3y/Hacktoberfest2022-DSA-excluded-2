@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+using namespace std;
+int findPeakElement(vector<int>& nums) {
+       return helper(nums,0,nums.size()-1); 
+    }
+    int helper(vector<int>nums,int start,int end)
+    {
+        if(start==end)
+            return start;
+        else if(start+1==end)
+        {
+            if(nums[start]<nums[end])
+                return end;
+            else
+                return start;
+        }
+        else
+        {
+           int mid=(start+end)/2;
+            if(nums[mid-1]<nums[mid] && nums[mid]>nums[mid+1])
+                return mid;
+            else
+            {
+                if(nums[mid-1]<nums[mid] && nums[mid]<nums[mid+1])
+                   return helper(nums,mid+1,end);
+                else if(nums[mid-1]>nums[mid] && nums[mid]>nums[mid+1])
+                   return  helper(nums,start,mid);
+                else if(nums[mid-1]>nums[mid] && nums[mid]<nums[mid+1])
+                     return helper(nums,start,mid);
+            }
+        }
+        return end;
+    }
+int main()
+{
+int n;
+cin>>n;
+vector<int>arr(n);
+for(auto &i:arr)
+cin>>i;
+int ans=findPeakElement(arr);
+cout<<"Peak element is "<<ans<<endl;
+
+return 0;
+}
