@@ -12,9 +12,9 @@ if __name__ == "__main__":
     x = 10
     N = len(arr)
  
-    # Function call
+    # call the function
     result = search(arr, N, x)
     if(result == -1):
-        print("Element is not present in array")
+        print("The element is not present in array")
     else:
-        print("Element is present at index", result)
+        print("The element is present at index", result)

@@ -1,39 +1,39 @@
 # Python program for HashTable 
 
-hashTable = [[],] * 10
+hash_Table = [[],] * 10
 
-def checkPrime(n):
+def check_Prime(n):
     if n == 1 or n == 0:
         return 0
     for i in range(2, n//2):
         if n % i == 0:
             return 0
     return 1
-def getPrime(n):
+def get_Prime(n):
     if n % 2 == 0:
         n = n + 1
 
-    while not checkPrime(n):
+    while not check_Prime(n):
         n += 2
     return n
 
-def hashFunction(key):
-    capacity = getPrime(10)
+def hash_Function(key):
+    capacity = get_Prime(10)
     return key % capacity
 
-def insertData(key, data):
-    index = hashFunction(key)
-    hashTable[index] = [key, data]
+def insert_Data(key, data):
+    index = hash_Function(key)
+    hash_Table[index] = [key, data]
 
-def removeData(key):
-    index = hashFunction(key)
-    hashTable[index] = 0
+def remove_Data(key):
+    index = hash_Function(key)
+    hash_Table[index] = 0
 
-insertData(100, "apple")
-insertData(250, "mango")
-insertData(300, "banana")
-insertData(350, "guava")
-print(hashTable)
+insert_Data(2000, "pineapple")
+insert_Data(2500, "orange")
+insert_Data(3000, "strawberry")
+insert_Data(3500, "blueberry")
+print(hash_Table)
 
-removeData(300)
-print(hashTable)
+remove_Data(3000)
+print(hash_Table)

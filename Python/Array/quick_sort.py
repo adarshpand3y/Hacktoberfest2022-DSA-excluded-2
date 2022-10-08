@@ -10,11 +10,11 @@ def partition(array, low, high):
   (array[i + 1], array[high]) = (array[high], array[i + 1])
   return i + 1
 
-def quickSort(array, low, high):
+def quick_Sort(array, low, high):
   if low < high:
     pi = partition(array, low, high)
-    quickSort(array, low, pi - 1)
-    quickSort(array, pi + 1, high)
+    quick_Sort(array, low, pi - 1)
+    quick_Sort(array, pi + 1, high)
 
 data = [24, 4, 8, 0, 5, 19, 16]
 print("Unsorted Array")
@@ -22,7 +22,7 @@ print(data)
 
 size = len(data)
 
-quickSort(data, 0, size - 1)
+quick_Sort(data, 0, size - 1)
 
-print('Sorted Array in Ascending Order:')
+print('Sorted Array in Ascending Order is:')
 print(data)

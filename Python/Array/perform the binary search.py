@@ -1,12 +1,12 @@
 # (d) write a python program to perform the binary search
 
-def binary_search(list, item):
+def binary_search(array, item):
     low = 0
-    high = len(list) - 1
+    high = len(array) - 1
 
     while low <= high:
         mid = (low + high) // 2
-        guess = list[mid]
+        guess = array[mid]
         if guess == item:
             return mid
         if guess > item:
@@ -16,12 +16,12 @@ def binary_search(list, item):
     return None
 
 
-list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+array = [100, 260, 300, 458, 590, 684, 750, 834, 990, 107]
 item = int(input("Enter the item to be searched: "))
-index = binary_search(list, item)
+index = binary_search(array, item)
 if index == -1:
-    print("Item not found")
+    print("The item is not found")
 else:
-    print("Item found at index: ", index)
+    print("Item is found at index: ", index)
 
-print(list)
+print(array)
