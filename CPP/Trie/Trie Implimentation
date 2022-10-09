@@ -1,0 +1,115 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define mod 10e8 + 7
+
+class Trie
+{
+    public:
+    
+    class TrieNode
+    { 
+        public:
+        vector<TrieNode*>v; //1-26
+        bool is_end;
+
+        TrieNode()
+        {
+            v = vector<TrieNode*>(27,NULL);
+            is_end = false;
+        }
+    };
+
+    TrieNode *root;
+
+    Trie()
+    {
+        root = new TrieNode();
+    }
+
+    void insert(string s)
+    {
+        TrieNode* store = root; 
+        int n = s.length();
+        int index = 0;
+
+        while(index<n)
+        {
+            int char_index = (s[index]-'a') + 1; 
+            if(store->v[char_index]==NULL)
+            {
+                TrieNode* temp = new TrieNode();
+                store->v[char_index] = temp;
+            }
+            store = store->v[char_index];
+            index++;
+        }
+
+        store->is_end = true;
+        return;
+    }
+
+    void find(string s)
+    {
+        TrieNode* store = root; 
+        int n = s.length();
+        int index = 0;
+
+        while(index<n)
+        {
+            int char_index = (s[index]-'a') + 1; 
+            if(store->v[char_index]==NULL)
+            {
+                break;
+            }
+            store = store->v[char_index];
+            index++;
+        }
+
+        store->is_end == true ? cout<<"YES"<<"\n" : cout<<"NO"<<"\n";
+    }
+
+    void find_prefix(string s)
+    {
+        TrieNode* store = root; 
+        int n = s.length();
+        int index = 0;
+
+        while(index<n)
+        {
+            int char_index = (s[index]-'a') + 1; 
+            if(store->v[char_index]==NULL)
+            {
+                cout<<"NO_Prefix"<<"\n";
+                return;
+            }
+            store = store->v[char_index];
+            index++;
+        }
+
+        cout<<"YES_Prefix"<<"\n";
+    }
+};
+
+int main()
+{
+    Trie* obj = new Trie();
+    
+    obj->insert("apple");
+    obj->insert("app");
+    obj->insert("cat");
+
+    obj->find("samkit");
+    obj->find("app");
+    obj->find("cat");
+    obj->find("apple");
+    obj->find("");
+
+    obj->find_prefix("app");
+    obj->find_prefix("appl");
+    obj->find_prefix("apple");
+    obj->find_prefix("ad");
+
+
+    return 0;
+}
