@@ -46,6 +46,6 @@ g.add_edge(6, 5, 5)
 D = dijkstra(g, 1)
 dist=len(D)
 for node in range(1,dist):
-    print("Distance from Node 1 to node", node, "is", D[node])
+    print("Distance from Node 1 to the node", node, "is", D[node])
   
   

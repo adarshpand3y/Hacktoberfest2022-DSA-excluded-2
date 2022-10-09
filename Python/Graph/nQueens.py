@@ -1,5 +1,5 @@
 #implementation of the N Queens Problem 
-class nQueens:
+class n_Queens:
   def __init__(self, n):
     self.n = n
     self.chess_table = [[0 for i in range(n)] for j in range(n)]
@@ -49,11 +49,11 @@ class nQueens:
 
     return False
 
-  def solve_nQueens(self):
+  def solve_n_Queens(self):
     if self.solve(0):
       self.print_queens()
     else:
       print("No solution exists for the problem")
 
-queens = nQueens(8)
-queens.solve_nQueens()
+queens = n_Queens(8)
+queens.solve_n_Queens()
