@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      JavaScript 6th Edition
+      Chapter 2
+      Hands-on Project 2-1
+
+      Author: Carter Rock
+      Date:   2/21/2021
+
+      Filename: index.htm
+   -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Hands-on Project 2-1</title>
+   <link rel="stylesheet" href="styles.css" />
+   <script src="modernizr.custom.05819.js"></script>
+</head>
+
+<body>
+   <header>
+      <h1>
+         Hands-on Project 2-1
+      </h1>
+   </header>
+
+   <article>
+      <h2>Fahrenheit (&#176; F) to Celsius (&#176; C) converter</h2>
+      <form>
+          <fieldset>
+            <label for="fValue">
+              Enter temp in &#176; F
+            </label>
+            <input type="number" id="fValue" />
+          </fieldset>
+          <fieldset>
+            <button type="button" id="button">Convert to &#176; C</button>
+          </fieldset>
+          <fieldset>
+             <p>Temp in &#176; C</p>
+            <p id="cValue">&nbsp;</p>
+          </fieldset>
+     </form>
+   </article>
+   <script>
+    function convert() {
+	var degF = document.getElementById("fValue").value;
+	var degC = (degF - 32) * (5 / 9);
+	document.getElementById("cValue").innerHTML = degC;
+	}
+	document.getElementById("button").
+	addEventListener("click", convert, false);
+   </script>
+   <footer>
+				<p id="validation">
+				<a href="http://validator.w3.org/check?uri=referer" title="HTML5 Validation">HTML5 Validation</a></p>
+	</footer>
+</body>
+</html>

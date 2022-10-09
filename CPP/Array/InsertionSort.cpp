@@ -1,27 +1,37 @@
 //Insertion Sort Algorithm
 
-#include<bits/stdc++.h>
+
+#include <bits/stdc++.h>
 using namespace std;
-
-void insertionsort(int a[], int n){
-    for(int i=1; i<n; i++){
-        int value=a[i];
-        int blank=i;
-        while(blank>0 && (a[blank-1]>value)){
-            a[blank]=a[blank-1];
-            blank--;
-        }
-        a[blank]=value;
-    }
-    for(int i=0; i<n; i++)
-    cout<<a[i]<<" ";
+void insertionSort(int a[], int n)
+{
+	int i, o, j;
+	for (i = 1; i < n; i++)
+	{
+		o = a[i];
+		j = i - 1;
+		while (j >= 0 && a[j] > o)
+		{
+			a[j + 1] = a[j];
+			j = j - 1;
+		}
+		a[j + 1] = o;
+	}
+}
+void printArray(int a[], int n)
+{
+	int i;
+	for (i = 0; i < n; i++)
+		cout << a[i] << " ";
+	cout << endl;
 }
 
-int main(){
-    int n;
-    cin>>n;
-    int a[n];
-    for(int i=0; i<n; i++)
-    cin>>a[i];
-    insertionsort(a,n); 
+int main()
+{
+	int arr[] = { 5,23,10,2,56,4 };
+	int n = sizeof(arr) / sizeof(arr[0]);
+	insertionSort(arr, n);
+	printArray(arr, n);
+	return 0;
 }
+// This is code is contributed by arghadip biswas

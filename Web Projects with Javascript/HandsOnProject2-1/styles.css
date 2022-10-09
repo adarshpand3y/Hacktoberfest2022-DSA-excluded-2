@@ -1,0 +1,123 @@
+/*  JavaScript 6th Edition
+    Chapter 2
+    Hands-on Project 2-1
+
+    Filename: styles.css
+*/
+
+/* apply a natural box layout model to all elements */
+* {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+/* reset rules */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+   display: block;
+}
+
+body {
+   line-height: 1;
+   max-width: 600px;
+   background: white;
+   margin: 0 auto;
+   font-family: Arial, Helvetica, sans-serif; 
+}
+
+ol, ul {
+   list-style: none;
+}
+
+/* page header */
+header {
+   background: #FFC340;
+   width: 100%;
+   color: black;
+   font-size: 48px;
+   text-align: center;
+   line-height: 1.5em;
+   border-bottom: 1px solid black;
+   border-left: 1px solid black;
+   border-right: 1px solid black;
+}
+
+/* main content */
+article {
+   text-align: center;
+   background: white;
+   border-bottom: 1px solid black;
+   border-left: 1px solid black;
+   border-right: 1px solid black;
+}
+
+article h2 {
+   font-weight: bold;
+   font-size: 24px;
+   padding: 10px;
+}
+
+/* form */
+form {
+   background: #A67100;
+   padding: 5px;
+   height: 110px;
+  }
+fieldset {
+   padding: 1em;
+   background: #FFAE00;
+   border: none;
+   float: left;
+   width: 33.3334%;
+   height: 100px;
+  }
+input {
+   font-size: 1em;
+   width: 4em;
+   clear: left;
+  }
+input:focus {
+   background: #e3d5ba;
+  }
+label {
+   display: block;
+  }
+input, label, button, form p {
+   float: left;
+   margin: 5px 10px;
+  }
+p {
+   clear: left;
+}
+p#cValue {
+   width: 4em;
+   font-size: 1.1em;
+   height: 1.4em;
+   background: white;
+   padding: 0.2em;
+   overflow: hidden;
+  text-overflow: ellipsis;
+}

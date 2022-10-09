@@ -1,3 +1,4 @@
+
 # (a) To implement stack using list.
 
 arr=[]
