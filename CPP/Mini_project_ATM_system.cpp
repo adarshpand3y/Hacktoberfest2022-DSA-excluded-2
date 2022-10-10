@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-1212
-/*-Features available now:
+
+/*-Features available :
  Check Balance
  Cash Withdrawl
  User Details
