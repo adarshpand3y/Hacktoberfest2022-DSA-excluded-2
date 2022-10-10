@@ -1,4 +1,4 @@
-
+#This repo is excluded from Hacktoberfest2022
 # 🎃 Hacktoberfest2022-DSA 💻
 
 Participate in Hacktoberfest and contribute to Open Source using this repository.
