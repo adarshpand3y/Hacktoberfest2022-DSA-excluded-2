@@ -12,25 +12,33 @@ Use a random number generator.*/
 #include <time.h>
 int main()
 {
-    int number,guess,nguess=1;
+    int number,guess,nguess=1,n=50,m=1;
     srand(time(0));
-    number=rand()%100 + 1;// Generates a random number between 1 and 100
+    number=rand()%50 + 1;// Generates a random number between 1 and 50
     // printf("The number is %d\n", number);
     // Keep running the loop until the number is guessed
     do
     {
-        printf("Guess the number between 1 to 100\n");
+        printf("Guess the number between 1 to 50\n");
         scanf("%d",&guess);
-        if (guess>number)
+        if (guess>n)
+        
         {
-            printf("Lower number please!");
+            printf("oops! choose within the range\n");
+        }
+        else if (guess<m){
+            printf("oops! choose within the range\n");
+        }
+        else if (guess>number)
+        {
+            printf("close enough!\n");
         }
         else if (guess<number)
         {
-            printf("Higher number please!");
+            printf("a little higher!\n");
         }
         else{
-            printf("You guessed it in %d attempts!",nguess);
+            printf("You guessed it in %d attempts!\n",nguess);
             
         }
         nguess++;
