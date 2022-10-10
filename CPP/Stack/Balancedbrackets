@@ -1,0 +1,100 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+class stackusingarray{
+
+    int *data;
+    int nextindex;
+    int capacity=4;
+public:
+    stackusingarray(){
+        data=new int[capacity];
+        nextindex=0;
+
+
+    }
+
+    bool isempty(){
+
+        return nextindex==0;
+
+    }
+
+
+
+    void push(int element){
+        if(nextindex==capacity){
+            int *newdata=new int[2*capacity];
+            for (int i = 0; i < capacity; i++)
+            {
+                newdata[i]=data[i];
+            }
+            
+            capacity *=2;
+            delete []data;
+            data=newdata;
+        }
+        data[nextindex]=element;
+        nextindex++;
+    }
+
+    int pop(){
+        if(isempty()){
+            cout<<"stack is empty"<<endl;
+            return -1;
+
+        }
+        nextindex--;
+        return data[nextindex];
+    }
+    int peek(){
+        if(isempty()){
+            cout<<"stack is empty"<<endl;
+            return -1;
+
+        }
+        return data[nextindex-1];
+    }
+
+};
+
+
+bool BracketsBalanced(string str)
+{
+ 
+    stackusingarray temp;
+    for (int i = 0; i < str.length(); i++) {
+        if (temp.isempty()) {
+            
+            temp.push(str[i]);
+        }
+        else if ((temp.peek() == '(' && str[i] == ')')
+                 || (temp.peek() == '{' && str[i] == '}')
+                 || (temp.peek() == '[' && str[i] == ']')) {
+
+            temp.pop();
+        }
+        else {
+            temp.push(str[i]);
+        }
+    }
+    if (temp.isempty()) {
+
+        return true;
+    }
+    return false;
+}
+ 
+
+int main()
+{
+    string str = "{()}[{(}]";
+ 
+    if (BracketsBalanced(str))
+        cout << "Balanced";
+    else
+        cout << "Not Balanced";
+    return 0;
+}
