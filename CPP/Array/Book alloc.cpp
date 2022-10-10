@@ -1,46 +1,40 @@
-bool isPossible(vector<int> arr, int n, int m, int mid)
+bool isPossible(int a[], int k, int res)
 {
-    int studentcount = 1;
-    int pagesum = 0;
-    for (int i = 0; i < n; i++)
+    int student = 1;
+    int sum = 0;
+    for (int i = 0; i < a.length; i++)
     {
-        if (pagesum + arr[i] <= mid)
+        if (sum + a[i] >res)
         {
-            pagesum += arr[i];
+            student++;
+            sum = a[i];
         }
         else
         {
-            studentcount++;
-            if (studentcount > m || arr[i] > mid)
-                return false;
-            pagesum = arr[i];
+           sum+ = a[i];
         }
     }
-    return true;
+    return student<=k;
 }
 
-int allocateBooks(vector<int> arr, int n, int m)
+int allocateBooks(int arr[], int k)
 {
     // Write your code here.
-    int l = 0;
-    int sum = 0;
-    int ans = -1;
-    for (int i = 0; i < n; i++)
+    int min = maxof(a);
+    int max = sumof(a);
+    int res=0;
+    
+    while(min<=max)
     {
-        sum += arr[i];
-    }
-    int h = sum;
-    int mid = (l + h) / 2;
-    while (l <= h)
-    {
-        if (isPossible(arr, n, m, mid))
+        int mid = (min+max)/2;
+        if(isPossible(a,k,mid))
         {
-            ans = mid;
-            h = mid - 1;
+                res = mid;
+                max = mid-1;
         }
-        else
-            l = mid + 1;
-        mid = (l + h) / 2;
+        else{
+                min=mid+1;
+        }
     }
-    return ans;
+    return res;
 }
