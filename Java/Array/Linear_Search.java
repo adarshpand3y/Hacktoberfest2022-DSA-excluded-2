@@ -1,3 +1,4 @@
+//program on linear search
 class Linear_Search {
     public static int search(int arr[], int x) {
         int N = arr.length;
