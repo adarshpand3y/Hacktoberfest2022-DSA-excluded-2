@@ -1,0 +1,76 @@
+#include<iostream>
+using namespace std;
+void msort(int a[],int l,int r);
+void merg(int a[],int l,int m,int r);
+void print(int a[],int size);
+
+void msort(int a[],int l,int r)
+{
+    int m;
+    if(l<r)
+    {
+        m=(l+r)/2;
+        msort(a,l,m);
+        msort(a,m+1,r);
+        merg(a,l,m,r);
+    }
+}
+void merg(int a[],int l,int m,int r)
+{
+    int n1=m-l+1;
+    int n2=r-m;
+    int c[n1],d[n2];
+    for(int i=0;i<n1;i++)
+    {
+        c[i]=a[l+i]; 
+    }
+    for(int j=0;j<n2;j++)
+    {
+        d[j]=a[m+1+j];
+    }
+    int i=0,j=0,k=l;
+    while(i<n1 && j<n2)
+    {
+        if(c[i]<=d[j])
+        {
+            a[k]=c[i];
+            i++;
+
+        }
+        else 
+        {
+            a[k]=d[j];
+            j++;
+        }
+        k++;
+    }
+    while(i<n1)
+    {
+        a[k]=c[i];
+        i++;
+        k++;
+    }
+    while(j<n2)
+    {
+        a[k]=d[j];
+        j++;
+        k++;
+    }
+}
+void print(int a[],int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        cout<<a[i]<<" ";
+
+    }
+    cout<<endl;
+}
+int main(){
+    int arr[]={6,5,12,10,9,1};
+    int size=sizeof(arr)/sizeof (arr[0]);
+    msort(arr,0,size-1);
+    cout<<"Sorted array"<<endl;
+    print(arr,size);
+
+}
