@@ -1,32 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int gcd(int a, int b)
+typedef pair<int, int> pr;
+class Solution
 {
-if (a == 0)
-	return b;
-return gcd(b % a, a);
-}
-
-int findGCD(int arr[], int n)
-{
-int result = arr[0];
-for (int i = 1; i < n; i++)
-{
-	result = gcd(arr[i], result);
-
-	if(result == 1)
+public:
+	int gcd(int a, int b)
 	{
-	return 1;
+		return b == 0 ? a : gcd(b, a % b);
 	}
-}
-return result;
-}
+};
 
 int main()
 {
-int arr[] = { 2, 4, 6, 8, 16 };
-int n = sizeof(arr) / sizeof(arr[0]);
-cout << findGCD(arr, n) << endl;
-return 0;
+	Solution inst;
+	vector<pr> vt{{10, 20}, {4, 5}, {10, 0}, {10, 100}, {1, 11}};
+	vector<int> res;
+	for (auto it : vt)
+	{
+		res.push_back(inst.gcd(it.first, it.second));
+	}
+
+	for (int i = 0; i < vt.size(); i++)
+	{
+		cout << "GCD Of " << vt[i].first << "," << vt[i].second << " is -> " << res[i] << endl;
+	}
+
+	return 0;
 }
