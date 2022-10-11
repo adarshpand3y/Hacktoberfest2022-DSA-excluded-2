@@ -1,18 +1,34 @@
-#include<iostream>
+// C++ program to convert a decimal
+// number to binary number
+ 
+#include <iostream>
 using namespace std;
-
-int main(){
-int n,sum=0,i=1;
-cout<<"Enter: ";
-cin>>n;
-
-while(n>0){
-    sum+=i*(n%10);
-    n/=10;
-    i*=2;
+ 
+// function to convert decimal to binary
+void decToBinary(int n)
+{
+    // array to store binary number
+    int binaryNum[32];
+ 
+    // counter for binary array
+    int i = 0;
+    while (n > 0) {
+ 
+        // storing remainder in binary array
+        binaryNum[i] = n % 2;
+        n = n / 2;
+        i++;
+    }
+ 
+    // printing binary array in reverse order
+    for (int j = i - 1; j >= 0; j--)
+        cout << binaryNum[j];
 }
-
-cout<<"Decimal Equivalent: "<<sum;
-
+ 
+// Driver program to test above function
+int main()
+{
+    int n = 17;
+    decToBinary(n);
     return 0;
 }
