@@ -1,0 +1,86 @@
+package lab;
+import java.util.*;
+public class hamiltonian {
+	Scanner sc= new Scanner(System.in);
+	static int n;
+	static int G[][];
+	static int x[];
+	boolean flag=false;
+	static final int max = 20;
+	public static void main(String[] args) {
+		hamiltonian h=new hamiltonian();
+		h.read();
+		h.ham(2);
+		h.possible();
+
+	}
+	public void possible()
+	{
+		if(flag==false)
+			System.out.println("no solution");
+	}
+	public void read()
+	{
+		int i,j;
+		Scanner sc= new Scanner(System.in);
+		System.out.println("enter number of elments");
+		n=sc.nextInt();
+		G=new int[n+1][n+1];
+		x=new int[n+1];
+		System.out.println("enter 1 if there exist a edge and 0 if not");
+		for(i=1;i<=n;i++)
+		
+			for(j=1;j<=n;j++)
+			{
+				if((i!=j)&&(i<j))
+				{
+					System.out.println("edge between "+i+" and "+j);
+					G[i][j]=G[j][i]=sc.nextInt();
+				}
+				if(i==j)
+					G[i][j]=0;
+			}
+		for(i=1;i<=n;i++)
+			x[i]=0;
+		x[1]=1;
+	}
+	public void ham(int k)
+	{
+		int i;
+		while(true)
+		{
+			nextvalue(k,G,x,n);
+			if(x[k]==0)
+				return;
+			if(k==n)
+			{
+				for(i=1;i<=n;i++)
+					System.out.print(x[i]+" ");
+				System.out.println(x[1]);
+				flag=true;
+				return;
+			}
+			else
+				ham(k+1);
+		}
+	}
+	public void nextvalue(int k,int G[][],int x[],int n)
+	{
+		while(true)
+		{
+			x[k]=(x[k]+1)%(n+1);
+			if(x[k]==0)
+				return;
+			if(G[x[k-1]][x[k]]!=0)
+			{
+				int j;
+				for( j=1;j<k;j++)
+					if(x[k]==x[j])
+						break;
+				if(j==k)
+					if((k<n)||(k==n)&&G[x[n]][x[1]]!=0)
+						return;
+			}
+		}
+	}
+}
