@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class BinarySearch {
     private static int binarySearchRecursive(int[] a, int start, int end, int target) {
         if (start > end) {
