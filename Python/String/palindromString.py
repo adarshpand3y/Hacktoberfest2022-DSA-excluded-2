@@ -10,6 +10,6 @@ ans = isPalindrome(s)
 
 #it will check condition and print yes or no
 if ans:
-    print("Yes")
+    print(s +"is Palindrome")
 else:
-    print("No")
+    print(s + "isn't Palindrome")
