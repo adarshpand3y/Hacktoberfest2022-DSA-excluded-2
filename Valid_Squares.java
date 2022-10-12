@@ -6,9 +6,7 @@ public class Valid_Squares {
     {
         System.out.println(mySqrt(40));
     }
-    public static int mySqrt(int x) {
-        
-
+    public int mySqrt(int x) {
         if(x == 0 || x == 1) return x;
 
         int l = 1;
