@@ -8,14 +8,14 @@ int main()
   cin>>weight;
   cout<<"Please Enter your Height in Inches : ";
   cin>>height;
-  cout<<"Enter your Age : ";
   while(true){
+    cout<<"Enter your Age : ";
     cin>>age;
     if(age>=20)
       break;
     else
       cout<<"This Application is only for Adults(20 years old or elder)"<<endl;
-      cout<<"Please re-enter your your age to get accurate results!!!");
+      cout<<"Please re-enter your your age to get accurate results!!!"<<endl;
   }
   bmi=(weight*703)/(height*height);
   cout<<"Your BMI is : "<<bmi<<endl;
