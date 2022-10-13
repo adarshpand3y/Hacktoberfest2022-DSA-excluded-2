@@ -30,6 +30,6 @@ int main()
 
     int evenIndex = binarySearch(even, 6, 4);
 
-    cout << "index of 18-->" << evenIndex << endl;
+    cout << "index of 18--->" << evenIndex << endl;
     return 0;
 }
