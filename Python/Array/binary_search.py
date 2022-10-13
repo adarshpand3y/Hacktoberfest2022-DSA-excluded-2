@@ -9,8 +9,7 @@ def binary_search(arr, low, high, x):
 		if arr[mid] == x:
 			return mid
 
-		# If element is smaller than mid, then it can only
-		# be present in left subarray
+		# If element is smaller than mid, then it can only be present in left subarray
 		elif arr[mid] > x:
 			return binary_search(arr, low, mid - 1, x)
 		# Else the element can only be present in right subarray
@@ -20,8 +19,9 @@ def binary_search(arr, low, high, x):
 		return -1
 
 # Test array
-arr = [ 2, 3, 4, 10, 40 ]
-x = 10
+arr=list(map(int,input("Enter elements of array: ").split(" ")))
+x= int(input("Enter element to search: "))
+print("Array: ",arr)
 
 # Function call
 result = binary_search(arr, 0, len(arr)-1, x)
