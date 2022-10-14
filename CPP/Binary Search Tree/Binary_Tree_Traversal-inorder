@@ -4,19 +4,20 @@ using namespace std;
 
 /* A binary tree node has data, pointer to left child
 and a pointer to right child */
-struct Node {
+struct Node{
 	int data;
-	struct Node *left, *right;
-};
+	struct Node *left;
+    struct Node *right;
+
 
 // Utility function to create a new tree node
-Node* newNode(int data)
+Node(int data)
 {
-	Node* temp = new Node;
+	Node* temp = new Node(data);
 	temp->data = data;
-	temp->left = temp->right = NULL;
-	return temp;
-}
+	temp->left = NULL;
+    temp->right = NULL;
+}};
 
 /* Given a binary tree, print its nodes in inorder*/
 void printInorder(struct Node* node)
@@ -37,11 +38,11 @@ void printInorder(struct Node* node)
 /* Driver code*/
 int main()
 {
-	struct Node* root = newNode(1);
-	root->left = newNode(2);
-	root->right = newNode(3);
-	root->left->left = newNode(4);
-	root->left->right = newNode(5);
+	struct Node* root = new Node(1);
+	root->left = new Node(2);
+	root->right = new Node(3);
+	root->left->left = new Node(4);
+	root->left->right = new Node(5);
 
 
 	// Function call
