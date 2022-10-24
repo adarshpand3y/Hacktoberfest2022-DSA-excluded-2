@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUDO Game</title>
+    <link rel="icon" href="dice1.png">
+    <style>
+        body {
+            background: #0a3d62;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Acme', #0a3d62;
+        }
+
+        .container {
+            width: 70%;
+            margin: auto;
+            text-align: center;
+        }
+
+        .dice {
+            text-align: center;
+            display: inline-block;
+        }
+
+        h1 {
+            margin: 26px;
+            text-shadow: 3px 1px white;
+            font-size: 4rem;
+            color: #f6b93b;
+        }
+
+        p {
+            font-size: 2rem;
+            color: #00b894;
+            text-shadow: 1px 1px white;
+        }
+
+        button {
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 15px;
+            text-align: center;
+            padding: 14px 22px;
+            cursor: pointer;
+            text-transform: uppercase;
+            border-radius: 41px;
+            display: inline-block;
+            margin-right: 7px;
+            color: rgb(196, 235, 192);
+            background-color: blue;
+            background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%), radial-gradient (cricle at top left, #4458dc, #854fee);
+            box-shadow: 0 24px 29px rgb(118 85 225);
+        }
+
+        img {
+            width: 76%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>AMF LUDO</h1>
+        <div class="dice">
+            <p>Player 1</p>
+            <img src="dice2.png" id="check1">
+        </div>
+        <div class="dice">
+            <p>Player 2</p>
+            <img src="dice6.png" id="check2">
+        </div>
+        <div><br><br><br><br>
+            <button onclick="ludogame()">Click Me</button>
+        </div>
+    </div>
+    <script>
+        ludogame = () => {
+            const play1 = Math.floor(Math.random() * 6) + 1;
+            const play1dice = `dice${play1}.png`;
+            document.getElementById('check1').setAttribute('src',play1dice);
+
+            const play2 = Math.floor(Math.random() * 6) + 1;
+            const play2dice = `dice${play2}.png`;
+            document.getElementById('check2').setAttribute('src',play2dice);
+
+            if (play1 > play2) {
+                document.querySelector('h1').innerHTML = "Player 1 Won :)";
+            }
+            else if (play1 < play2) {
+                document.querySelector('h1').innerHTML = "Player 2 Won :)";
+            }
+            else {
+                document.querySelector('h1').innerHTML = "DRAW !!";
+            }
+        } 
+    </script>
+</body>
+
+</html>
