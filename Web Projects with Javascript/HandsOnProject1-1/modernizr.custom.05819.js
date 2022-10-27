@@ -1,10 +1,3 @@
-/* Modernizr 2.6.2 (Custom Build) | MIT & BSD
- * Build: http://modernizr.com/download/#-fontface-csstransforms-shiv-cssclasses-teststyles-testprop-testallprops-domprefixes-load
- */
-;
-
-
-
 window.Modernizr = (function( window, document, undefined ) {
 
     var version = '2.6.2',
